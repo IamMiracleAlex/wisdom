@@ -7,8 +7,6 @@
 
                 <h3 class="text-center mt-4 text-primary">See Quotes</h3>
 
-                {% comment %} <h5 class="text-center mt-4"><a class="btn btn-primary font-weight-bold" href="{% url 'list' %}">See All Applications</a> </h5> {% endcomment %}
-
                 <br>
 
                     <div class="col-lg-8 mx-auto ">
@@ -28,30 +26,15 @@
                         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
                     <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="10000">
-                        {% comment %} <img src="..." class="d-block w-100" alt="..."> {% endcomment %}
-                        {% comment %} <div class="carousel-caption d-none d-md-block"> {% endcomment %}
-                            <h5>First slide label</h5>
-                            <p>What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. the first slide.</p>
-                        {% comment %} </div> {% endcomment %}
+
+                        {% for quote in quotes %}
+                        <div class="my-5 px-5 carousel-item {% if forloop.counter == 1 %} active {% endif %} " data-bs-interval="8000">
+
+                            <h5 class='text-center'>{{ quote.title.title }}</h5>
+                            <div class='text-center'> {{ quote.body|safe }} </div>
                         </div>
-                        <div class="carousel-item" data-bs-interval="2000">
-                        {% comment %} <img src="..." class="d-block w-100" alt="..."> {% endcomment %}
-                        {% comment %} <div class="carousel-caption d-none d-md-block"> {% endcomment %}
-                            <h5>Second slide label</h5>
-                            <p>What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. the second slide.</p>
-                        {% comment %} </div> {% endcomment %}
-                        </div>
-                        <div class="carousel-item">
-                        {% comment %} <img src="..." class="d-block w-100" alt="..."> {% endcomment %}
-                        {% comment %} <div class="carousel-caption d-none d-md-block"> {% endcomment %}
-                            <h5>Third slide label</h5>
-                            <p>What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. the third slide.</p>
-                        {% comment %} </div> {% endcomment %}
-                        </div>
+                        {% endfor %}
+                       
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
