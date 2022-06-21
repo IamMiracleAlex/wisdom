@@ -14,3 +14,6 @@ def quote_list(request):
 
 def quote_detail(request):
 	...
+
+
+# add a db
