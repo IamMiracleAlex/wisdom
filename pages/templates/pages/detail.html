@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% comment %} {% block title %} {{ post.title }} {% endblock title %} {% endcomment %}
+
+{% load static %}   
+
+{% block css %}
+
+    <link href="{% static 'css/detail.css' %}" rel="stylesheet"/>
+
+{% endblock css %}
+
+
+
+{% block content %}
+
+
+<div id="main-content" class="blog-page">
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col-lg-8 col-md-12 left-box">
+                    <div class="card single_post">
+                        <div class="body">
+                            <div class="img-post">
+                                <img class="d-block img-fluid" src="https://via.placeholder.com/800x280/87CEFA/000000" alt="First slide">
+                            </div>
+                            <h3><a href="blog-details.html">{{ quote.title }}</a></h3>
+                            <p>{{ quote.body|safe }}</p>
+                        </div>                        
+                    </div>
+                   
+                </div>
+                <div class="col-lg-4 col-md-12 right-box">
+                    <div class="card">
+                        <div class="body search">
+                            <div class="input-group m-b-0">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Search...">                                    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <h2>Categories Clouds</h2>
+                        </div>
+                        <div class="body widget">
+                            <ul class="list-unstyled categories-clouds m-b-0">
+                                <li><a >eCommerce</a></li>
+                                <li><a >Microsoft Technologies</a></li>
+                                <li><a >Creative UX</a></li>
+                                <li><a >Wordpress</a></li>
+                                <li><a >Angular JS</a></li>
+                                <li><a >Enterprise Mobility</a></li>
+                                <li><a >Website Design</a></li>
+                                <li><a >HTML5</a></li>
+                                <li><a >Infographics</a></li>
+                                <li><a >Wordpress Development</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    
+                 
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock content %}
+
