@@ -33,7 +33,7 @@
                    <tr>
                         <th scope="row"></th>
                         <td>{{ quote.author }}</td>
-                        <td><a href="{% url 'quote_detail' quote.id %}"> {{ quote.title }} </a></td>
+                        <td><a style="text-decoration: none;" href="{% url 'quote_detail' quote.id %}"> {{ quote.title }} </a></td>
                         <td>{{ quote.body|safe|truncatechars:150 }}</td>
                         <td>{{ quote.views }}</td>
                         <td>{{ quote.created_at }}</td>
