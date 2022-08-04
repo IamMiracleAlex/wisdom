@@ -26,7 +26,6 @@
                     <th scope="col">Views</th>
                     <th scope="col">Created at</th>
                     <th scope="col">Updated at</th>
-                    <th scope="col">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -34,12 +33,11 @@
                    <tr>
                         <th scope="row"></th>
                         <td>{{ quote.author }}</td>
-                        <td>{{ quote.title }}</td>
+                        <td><a href="{% url 'quote_detail' quote.id %}"> {{ quote.title }} </a></td>
                         <td>{{ quote.body|safe|truncatechars:150 }}</td>
                         <td>{{ quote.views }}</td>
                         <td>{{ quote.created_at }}</td>
                         <td>{{ quote.updated_at }}</td>
-                        <td> <a href="{% url 'quote_detail' quote.id %}"> Visit </a></td>
                     </tr>
                 {% endfor %}
 
