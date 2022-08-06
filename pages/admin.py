@@ -10,4 +10,4 @@ class QuoteAdmin(admin.ModelAdmin):
 	list_display = ['title', 'make_public', 'views', 'author', 'created_at']
 	list_filter = ['make_public', 'author',]
 	search_fields = ['title', 'body']
-	date_hierarchy = ['created_at']
+	date_hierarchy = 'created_at'
